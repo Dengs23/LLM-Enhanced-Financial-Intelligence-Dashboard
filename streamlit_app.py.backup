@@ -24,16 +24,6 @@ from openai import OpenAI
 
 warnings.filterwarnings('ignore')
 
-
-# This is safe - it reads from secrets, doesn't contain the actual key
-OPENAI_API_KEY = None
-try:
-    OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]  # Reads from Streamlit Cloud secrets
-except:
-    try:
-        OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")  # Reads from environment
-    except:
-        pass
 # ============================================================================
 # CONFIGURATION
 # ============================================================================
